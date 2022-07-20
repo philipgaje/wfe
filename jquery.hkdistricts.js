@@ -46,7 +46,7 @@
 			'onZipcodeKeyUp': null,
 			'readonly': false,
 			'zipcodeName': 'zipcode',
-			'zipcodePlaceholder': '�菟�𧼮����',
+			'zipcodePlaceholder': 'New Territories',
 			'zipcodeIntoDistrict': false,
 		};
 		this.container = $(container);
