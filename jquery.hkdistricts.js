@@ -177,7 +177,7 @@
 						for (district in data[val]) {
 							if ('undefined' !== typeof data[val][district] && (-1 === opts.hideDistrict.indexOf(district) && -1 === opts.hideDistrict.indexOf(data[val][district]))) {
 								tpl.push('<option value="' + district + '">');
-								tpl.push(data[val][district] + ' ' + district);
+								tpl.push(district);
 								tpl.push('</option>');
 							}
 						}
@@ -331,7 +331,9 @@
 				'district': container.find('select[name="' + districtName + '"]:first'),
 				'zipcode': container.find('input[type=text][name="' + zipcodeName + '"]:first')
 			};
-			self.wrap.zipcode.hide();
+			if (true === opts.zipcodeIntoDistrict) {
+				self.wrap.zipcode.hide();
+			}
 			self.role = role;
 			self.reset();
 			self.bindings();
