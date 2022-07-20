@@ -331,9 +331,7 @@
 				'district': container.find('select[name="' + districtName + '"]:first'),
 				'zipcode': container.find('input[type=text][name="' + zipcodeName + '"]:first')
 			};
-			if (true === opts.zipcodeIntoDistrict) {
-				self.wrap.zipcode.hide();
-			}
+			self.wrap.zipcode.hide();
 			self.role = role;
 			self.reset();
 			self.bindings();
