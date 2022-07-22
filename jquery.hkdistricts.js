@@ -27,15 +27,15 @@
 			'Wan Chai': '303'
 		},
 		'Municipality of Macau': {
-			'Nossa Senhora de Fátima': '',
-			'Santo António': '',
-			'São Lázaro': '',
-			'São Lourenço': '',
-			'Sé': ''
+			'Nossa Senhora de Fátima': '400',
+			'Santo António': '401',
+			'São Lázaro': '402',
+			'São Lourenço': '403',
+			'Sé': '405'
 		},
 		'Municipality of Ilhas': {
-			'Nossa Senhora do Carmo': '',
-			'São Francisco Xavier': ''
+			'Nossa Senhora do Carmo': '500',
+			'São Francisco Xavier': '501'
 		}
 	};
 
