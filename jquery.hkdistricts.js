@@ -1,32 +1,43 @@
 ;
 (function($, window, document, undefined) {
 	'use strict';
-    var data = {
-      'New Territories': {
-          'Islands': '100',
-          'Kwai Tsing': '101',
-          'North': '102',
-          'Sai Kung': '103',
-          'Sha Tin': '104',
-          'Tai Po': '105',
-          'Tsuen Wan': '106',
-          'Tuen Mun': '107',
-          'Yuen Long': '108'
-      },
-      'Kowloon': {
-          'Kowloon City': '200',
-          'Kwun Tong': '201',
-          'Sham Shui Po': '202',
-          'Wong Tai Sin': '203',
-          'Yau Tsim Mong': '204'
-      },
-      'Hong Kong Island': {
-          'Central and Western': '300',
-          'Eastern': '301',
-          'Southern': '302',
-          'Wan Chai': '303'
-      }
-  };
+	var data = {
+		'New Territories': {
+			'Islands': '100',
+			'Kwai Tsing': '101',
+			'North': '102',
+			'Sai Kung': '103',
+			'Sha Tin': '104',
+			'Tai Po': '105',
+			'Tsuen Wan': '106',
+			'Tuen Mun': '107',
+			'Yuen Long': '108'
+		},
+		'Kowloon': {
+			'Kowloon City': '200',
+			'Kwun Tong': '201',
+			'Sham Shui Po': '202',
+			'Wong Tai Sin': '203',
+			'Yau Tsim Mong': '204'
+		},
+		'Hong Kong Island': {
+			'Central and Western': '300',
+			'Eastern': '301',
+			'Southern': '302',
+			'Wan Chai': '303'
+		},
+		'Municipality of Macau': {
+			'Nossa Senhora de Fátima': '',
+			'Santo António': '',
+			'São Lázaro': '',
+			'São Lourenço': '',
+			'Sé': ''
+		},
+		'Municipality of Ilhas': {
+			'Nossa Senhora do Carmo': '',
+			'São Francisco Xavier': ''
+		}
+	};
 
 	function transfer(value) {
 		return value;
