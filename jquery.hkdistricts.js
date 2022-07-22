@@ -57,7 +57,7 @@
 			'onZipcodeKeyUp': null,
 			'readonly': false,
 			'zipcodeName': 'zipcode',
-			'zipcodePlaceholder': 'New Territories',
+			'zipcodePlaceholder': '�菟�𧼮����',
 			'zipcodeIntoDistrict': false,
 		};
 		this.container = $(container);
@@ -150,8 +150,8 @@
 				opts = self.options,
 				county = '',
 				list = {
-					'county': '<option value="">New Territories</option>',
-					'district': '<option value="">Islands</option>'
+					'county': '<option value="">蝮��</option>',
+					'district': '<option value="">�厰緤撣���</option>'
 				},
 				tpl = [];
 			switch (obj) {
@@ -184,11 +184,21 @@
 					tpl = [];
 				wrap.district.empty();
 				if (val) {
-					for (district in data[val]) {
-						if ('undefined' !== typeof data[val][district] && (-1 === opts.hideDistrict.indexOf(district) && -1 === opts.hideDistrict.indexOf(data[val][district]))) {
-							tpl.push('<option value="' + district + '">');
-							tpl.push(district);
-							tpl.push('</option>');
+					if (true === opts.zipcodeIntoDistrict) {
+						for (district in data[val]) {
+							if ('undefined' !== typeof data[val][district] && (-1 === opts.hideDistrict.indexOf(district) && -1 === opts.hideDistrict.indexOf(data[val][district]))) {
+								tpl.push('<option value="' + district + '">');
+								tpl.push(data[val][district] + ' ' + district);
+								tpl.push('</option>');
+							}
+						}
+					} else {
+						for (district in data[val]) {
+							if ('undefined' !== typeof data[val][district] && (-1 === opts.hideDistrict.indexOf(district) && -1 === opts.hideDistrict.indexOf(data[val][district]))) {
+								tpl.push('<option value="' + district + '">');
+								tpl.push(district);
+								tpl.push('</option>');
+							}
 						}
 					}
 					wrap.district.append(tpl.join('')).trigger('change.twzipcode');
