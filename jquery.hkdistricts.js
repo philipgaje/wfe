@@ -57,7 +57,7 @@
 			'onZipcodeKeyUp': null,
 			'readonly': false,
 			'zipcodeName': 'zipcode',
-			'zipcodePlaceholder': 'New Territories',
+			'zipcodePlaceholder': 'Select a Region',
 			'zipcodeIntoDistrict': false,
 		};
 		this.container = $(container);
