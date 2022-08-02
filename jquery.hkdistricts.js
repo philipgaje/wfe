@@ -3,39 +3,39 @@
 	'use strict';
 	var data = {
 		'New Territories': {
-			'Islands': '100',
-			'Kwai Tsing': '101',
-			'North': '102',
-			'Sai Kung': '103',
-			'Sha Tin': '104',
-			'Tai Po': '105',
-			'Tsuen Wan': '106',
-			'Tuen Mun': '107',
-			'Yuen Long': '108'
+			'離島區': '100',
+			'葵青區': '101',
+			'北區': '102',
+			'西貢區': '103',
+			'沙田區': '104',
+			'大埔區': '105',
+			'荃灣區': '106',
+			'屯門區': '107',
+			'元朗區': '108'
 		},
 		'Kowloon': {
-			'Kowloon City': '200',
-			'Kwun Tong': '201',
-			'Sham Shui Po': '202',
-			'Wong Tai Sin': '203',
-			'Yau Tsim Mong': '204'
+			'九龍城區': '200',
+			'觀塘區': '201',
+			'深水埗區': '202',
+			'黃大仙區': '203',
+			'油尖旺區': '204'
 		},
 		'Hong Kong Island': {
-			'Central and Western': '300',
-			'Eastern': '301',
-			'Southern': '302',
-			'Wan Chai': '303'
+			'中西區': '300',
+			'東區': '301',
+			'南區': '302',
+			'灣仔區': '303'
 		},
 		'Municipality of Macau': {
-			'Nossa Senhora de Fátima': '400',
-			'Santo António': '401',
-			'São Lázaro': '402',
-			'São Lourenço': '403',
-			'Sé': '405'
+			'花地瑪堂區': '400',
+			'花王堂區': '401',
+			'望德堂區': '402',
+			'風順堂區': '403',
+			'大堂區 (包括新城B區)': '405'
 		},
 		'Municipality of Ilhas': {
-			'Nossa Senhora do Carmo': '500',
-			'São Francisco Xavier': '501'
+			'嘉模堂區 (包括新城E區)': '500',
+			'聖方濟各堂區': '501'
 		}
 	};
 
