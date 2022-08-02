@@ -57,7 +57,7 @@
 			'onZipcodeKeyUp': null,
 			'readonly': false,
 			'zipcodeName': 'zipcode',
-			'zipcodePlaceholder': '�菟�𧼮����',
+			'zipcodePlaceholder': 'New Territories',
 			'zipcodeIntoDistrict': false,
 		};
 		this.container = $(container);
@@ -106,7 +106,7 @@
 				}
 			}
 			if ('function' === typeof callback) {
-				callback.call(this, this.wrap.county.val(), this.wrap.district.val(), this.wrap.zipcode.val());
+				callback.call(this, this.wrap.county.val(), this.wrap.district.val(), 'test');
 			} else if ('string' === typeof callback) {
 				callback.split(',').forEach(putin);
 			} else if (Array.isArray(callback)) {
