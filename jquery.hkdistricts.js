@@ -106,7 +106,7 @@
 				}
 			}
 			if ('function' === typeof callback) {
-				callback.call(this, this.wrap.county.val(), this.wrap.district.val(), 'test');
+				callback.call(this, this.wrap.county.val(), this.wrap.district.val(), this.wrap.zipcode.val());
 			} else if ('string' === typeof callback) {
 				callback.split(',').forEach(putin);
 			} else if (Array.isArray(callback)) {
