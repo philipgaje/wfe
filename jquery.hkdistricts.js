@@ -150,8 +150,8 @@
 				opts = self.options,
 				county = '',
 				list = {
-					'county': '<option value="">New Territories</option>',
-					'district': '<option value="">Islands</option>'
+					'county': '<option value="">Select a Region</option>',
+					'district': '<option value="">Select a Region</option>'
 				},
 				tpl = [];
 			switch (obj) {
