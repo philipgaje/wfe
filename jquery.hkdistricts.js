@@ -2,40 +2,37 @@
 (function($, window, document, undefined) {
 	'use strict';
 	var data = {
-		'New Territories': {
-			'離島區': '100',
-			'葵青區': '101',
-			'北區': '102',
-			'西貢區': '103',
-			'沙田區': '104',
-			'大埔區': '105',
-			'荃灣區': '106',
-			'屯門區': '107',
-			'元朗區': '108'
+		'香港島': {
+			'西營盤': '',
+			'堅尼地城': '',
+			'上環': '',
+			'大坑': '',
+			'山頂': '',
+			'中環': '',
+			'天后': '',
+			'太古城': '',
+			'北角': '',
+			'半山': '',
+			'石澳': '',
+			'西環': '',
+			'赤柱': '',
+			'金鐘': '',
+			'柴灣': '',
+			'灣仔': '',
+			'西灣河': '',
+			'杏花村': '',
+			'淺水灣': '',
+			'深水灣': '',
+			'跑馬地': '',
+			'筲箕灣': '',
+			'銅鑼灣': '',
+			'鴨利洲': '',
+			'薄扶林': '',
+			'鰂魚涌': '',
+			'小西灣': ''
 		},
-		'Kowloon': {
-			'九龍城區': '200',
-			'觀塘區': '201',
-			'深水埗區': '202',
-			'黃大仙區': '203',
-			'油尖旺區': '204'
-		},
-		'Hong Kong Island': {
-			'中西區': '300',
-			'東區': '301',
-			'南區': '302',
-			'灣仔區': '303'
-		},
-		'澳門市': {
-			'花地瑪堂區': '400',
-			'花王堂區': '401',
-			'望德堂區': '402',
-			'風順堂區': '403',
-			'大堂區 (包括新城B區)': '405'
-		},
-		'海島市': {
-			'嘉模堂區 (包括新城E區)': '500',
-			'聖方濟各堂區': '501'
+		'九龍': {
+
 		}
 	};
 
@@ -57,7 +54,7 @@
 			'onZipcodeKeyUp': null,
 			'readonly': false,
 			'zipcodeName': 'zipcode',
-			'zipcodePlaceholder': 'Select a Region',
+			'zipcodePlaceholder': '區域',
 			'zipcodeIntoDistrict': false,
 		};
 		this.container = $(container);
@@ -150,8 +147,8 @@
 				opts = self.options,
 				county = '',
 				list = {
-					'county': '<option value="">Select a Region</option>',
-					'district': '<option value="">Select a Region</option>'
+					'county': '<option value="">區域</option>',
+					'district': '<option value="">地區</option>'
 				},
 				tpl = [];
 			switch (obj) {
