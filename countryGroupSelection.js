@@ -13,7 +13,7 @@ function setCountryGroupOptions() {
 }
 
 function handleCountryGroupSelect() {
-  let country_group_id = this.value();
+  let country_group_id = this.value;
   alert(country_group_id);
 }
 
