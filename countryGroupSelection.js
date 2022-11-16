@@ -1,34 +1,23 @@
-function test() {
-  alert("Testing external js file");
-}
-
 function getAccessToken() {
   var body = {
     "email": "chrisbrewer@worldfamilyenglish.com",
     "password": "worldfamilychris!#"
   };
-
+  
+  var token = 'bearer ';
+  
   $.ajax({
       url: 'https://apps.dwe.hk/wfhk/api/auth/token/generate',
       type: 'POST',
       dataType: 'json',
       contentType: 'application/x-www-form-urlencoded; charset=UTF-8',
       data: body,
-      complete: function(result) {
-          //called when complete
-          console.log(result);
-      },
-
+      complete: function(result) {},
       success: function(result) {
-          //called when successful
-          var token = result.token;
- 
-          console.log(token);
+        token = token + result.token;
       },
-
-      error: function(result) {
-          //called when there is an error
-          console.log(result);
-      },
+      error: function(result) {},
   });
+  
+  console.log(token);
 }
