@@ -7,7 +7,9 @@ function setCountryGroupOptions() {
   
   dropdown.attr('selectedIndex', 0);
   
-  
+  dropdown.append($('<option></option>').attr('value', 1).text("Group 1"));
+  dropdown.append($('<option></option>').attr('value', 2).text("Group 2"));
+  dropdown.append($('<option></option>').attr('value', 3).text("Group 3"));
 }
 
 function handleCountryGroupSelect() {
