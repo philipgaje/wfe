@@ -4,7 +4,7 @@ async function getAccessToken() {
     "password": "worldfamilychris!#"
   };
   
-  await $.ajax({
+  const response = await $.ajax({
       url: 'https://apps.dwe.hk/wfhk/api/auth/token/generate',
       type: 'POST',
       dataType: 'json',
@@ -12,8 +12,10 @@ async function getAccessToken() {
       data: body,
       complete: function(result) {},
       success: function(result) {
-        return 'bearer ' + result.token;
+        console.log(result);
       },
       error: function(result) {},
   });
+  
+  return response;
 }
