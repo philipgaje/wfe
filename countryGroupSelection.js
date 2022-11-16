@@ -55,10 +55,9 @@ function getCountries(country_group_id, dropdown) {
   }).then(function (res) {
     return res.json();
   }).then(function (data) {
-    console.log(data);
-//     data.forEach(function (entry) {
-//       dropdown.append($('<option></option>').attr('value', entry.country_id).text(entry.name));
-//     })
+    data.forEach(function (entry) {
+      dropdown.append($('<option></option>').attr('value', entry.country_id).text(entry.name));
+    })
   }).catch(function (err) {
     console.log('something went wrong', err);
   });
