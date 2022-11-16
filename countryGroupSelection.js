@@ -3,6 +3,8 @@ function test() {
 }
 
 function getAccessToken() {
+  var token = '';
+  
   var body = {
     "email": "chrisbrewer@worldfamilyenglish.com",
     "password": "worldfamilychris!#"
@@ -21,7 +23,7 @@ function getAccessToken() {
 
       success: function(result) {
           //called when successful
-          alert(result);
+          token = result.token;
       },
 
       error: function(result) {
@@ -29,4 +31,6 @@ function getAccessToken() {
           alert(result);
       },
   });
+  
+  return token;
 }
