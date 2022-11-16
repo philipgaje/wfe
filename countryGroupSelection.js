@@ -25,7 +25,7 @@ function setCountryGroupOptions() {
   
   if(token) {
     getAccessToken().then(function () {
-      // fetch country groups
+      getCountryGroups(dropdown);
     }
   }
                           
