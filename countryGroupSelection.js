@@ -18,7 +18,7 @@ function getAccessToken() {
       data: body,
       complete: function(result) {
           //called when complete
-          alert(result);
+          console.log(result);
       },
 
       success: function(result) {
@@ -28,7 +28,7 @@ function getAccessToken() {
 
       error: function(result) {
           //called when there is an error
-          alert(result);
+          console.log(result);
       },
   });
   
