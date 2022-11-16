@@ -5,7 +5,7 @@ function setCountryGroupOptions() {
   
   dropdown.append('<option selected="true" disabled>Choose Country Group</option>');
   
-  dropdown.prop('selectedIndex', 0;
+  dropdown.prop('selectedIndex', 0);
 }
 
 async function getAccessToken() {
