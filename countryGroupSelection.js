@@ -1,12 +1,12 @@
-function getAccessToken() {
+async function getAccessToken() {
   var body = {
     "email": "chrisbrewer@worldfamilyenglish.com",
     "password": "worldfamilychris!#"
   };
   
-  var token = 'bearer ';
+  let token = 'bearer ';
   
-  $.ajax({
+  const result = await $.ajax({
       url: 'https://apps.dwe.hk/wfhk/api/auth/token/generate',
       type: 'POST',
       dataType: 'json',
@@ -19,5 +19,5 @@ function getAccessToken() {
       error: function(result) {},
   });
   
-  console.log(token);
+  console.log(result);
 }
