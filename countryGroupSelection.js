@@ -44,11 +44,9 @@ function handleCountryGroupSelect() {
 }
 
 function getCountries(country_group_id, dropdown) {
-  return fetch('https://apps.dwe.hk/wfhk/api/leads/3/country', {
-    body: 'country_group_id=' + country_group_id,
+  return fetch('https://apps.dwe.hk/wfhk/api/leads/3/country?country_group_id=' + country_group_id, {
     headers: {
-      'Authorization': 'bearer ' + token,
-      'Content-Type': 'application/x-www-form-urlencoded'
+      'Authorization': 'bearer ' + token
     }
   }).then(function (res) {
     return res.json();
