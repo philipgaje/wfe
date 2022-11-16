@@ -1,4 +1,18 @@
-var token = 'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwczpcL1wvYXBwcy5kd2UuaGtcL3dmaGtcL2FwaVwvYXV0aFwvdG9rZW5cL2dlbmVyYXRlIiwiaWF0IjoxNjY4NTU4NjAxLCJleHAiOjE2NzA5Nzc4MDEsIm5iZiI6MTY2ODU1ODYwMSwianRpIjoiVXo5ZFJrOGpkSGlnTnRWTSIsInN1YiI6MywicHJ2IjoiMjNiZDVjODk0OWY2MDBhZGIzOWU3MDFjNDAwODcyZGI3YTU5NzZmNyJ9.omzXkCre6BMtftsnuXFgRVscvLnsx8VP9U3uc2Lrbpg';
+var token;
+
+var getCountryGroups(dropdown) {
+  return fetch('https://apps.dwe.hk/wfhk/api/leads/3/country_group', {
+    headers: {
+      'Authorization': 'bearer ' + token,
+    }
+  }).then(function (res) {
+    return res.json();
+  }).then(function (data) {
+    console.log('groups', data);
+  }).catch(function (err) {
+    console.log('something went wrong', err);
+  });
+}
 
 function setCountryGroupOptions() {
   let dropdown = $("#區域");
@@ -9,13 +23,11 @@ function setCountryGroupOptions() {
   
   dropdown.attr('selectedIndex', 0);
   
-  getAccessToken();
-  
-//   if(token) {
-//     getAccessToken().then(function () {
-//       // fetch country groups
-//     }
-//   }
+  if(token) {
+    getAccessToken().then(function () {
+      // fetch country groups
+    }
+  }
                           
   // fetch country groups
   
@@ -38,11 +50,6 @@ function handleCountryGroupSelect() {
 }
 
 function getAccessToken() {
-  var body = {
-    "email": "chrisbrewer@worldfamilyenglish.com",
-    "password": "worldfamilychris!#"
-  };
-	
   var email = "chrisbrewer@worldfamilyenglish.com";
   var password = "worldfamilychris!#";
   
@@ -53,7 +60,7 @@ function getAccessToken() {
       'Content-Type': 'application/x-www-form-urlencoded'
     }
   }).then(function (res) {
-      return res.json;
+      return res.json();
   }).then(function (data) {
       console.log('token', data);
       token = data.token;
