@@ -32,17 +32,15 @@ function getCountryGroups(dropdown) {
 }
 
 function handleCountryGroupSelect() {
-  // set dropdown field for countries here
-  
   let country_group_id = this.value;
-  alert(country_group_id);
+  let dropdown = $(country_group_id);
   
   if(token == null) {
     getAccessToken().then(function () {
-      getCountries(country_group_id, null);
+      getCountries(country_group_id, dropdown);
     });
   }
-  else getCountries(country_group_id, null);
+  else getCountries(country_group_id, dropdown);
 }
 
 function getCountries(country_group_id, dropdown) {
@@ -54,8 +52,9 @@ function getCountries(country_group_id, dropdown) {
     return res.json();
   }).then(function (data) {
     console.log(data);
-    
-    // iterate through each country and append to dropdown field
+    data.forEach(function (entry) {
+      dropdown.append($('<option></option>').attr('value', entry.country_id).text(entry.name));
+    })
   }).catch(function (err) {
     console.log('something went wrong', err);
   });
