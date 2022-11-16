@@ -29,7 +29,7 @@ function setCountryGroupOptions() {
     });
   }
   
-  console.log("Cached: " token);
+  console.log("Cached: " + token);
 //   getCountryGroups(dropdown);
 }
 
