@@ -4,7 +4,7 @@ function setCountryGroupOptions() {
   let dropdown = $("#區域");
   
   dropdown.empty();
-  dropdown.append('<option selected="true" disabled>Choose Country Group</option>');
+  dropdown.append('<option selected="true" disabled>請選擇區域</option>');
   dropdown.attr('selectedIndex', 0);
   
   if(token == null) {
