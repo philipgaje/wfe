@@ -1,4 +1,4 @@
-var token;
+var token = null;
 
 function getCountryGroups(dropdown) {
   return fetch('https://apps.dwe.hk/wfhk/api/leads/3/country_group', {
@@ -23,7 +23,7 @@ function setCountryGroupOptions() {
   
   dropdown.attr('selectedIndex', 0);
   
-  if(token) {
+  if(token == null) {
     getAccessToken().then(function () {
       getCountryGroups(dropdown);
     });
