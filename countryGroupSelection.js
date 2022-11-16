@@ -29,7 +29,7 @@ function setCountryGroupOptions() {
     });
   }
   
-  getCountryGroups(dropdown);
+//   getCountryGroups(dropdown);
 }
 
 function handleCountryGroupSelect() {
