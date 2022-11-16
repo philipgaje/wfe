@@ -26,9 +26,7 @@ function getCountryGroups(dropdown) {
     data.forEach(function (entry) {
       dropdown.append($('<option></option>').attr('value', entry.country_group_id).text(entry.name));
     })
-  }).catch(function (err) {
-    console.log('something went wrong', err);
-  });
+  }).catch(function (err) {});
 }
 
 function handleCountryGroupSelect() {
@@ -58,9 +56,7 @@ function getCountries(country_group_id, dropdown) {
     data.forEach(function (entry) {
       dropdown.append($('<option></option>').attr('value', entry.country_id).text(entry.name));
     })
-  }).catch(function (err) {
-    console.log('something went wrong', err);
-  });
+  }).catch(function (err) {});
 }
 
 function getAccessToken() {
@@ -77,7 +73,5 @@ function getAccessToken() {
       return res.json();
   }).then(function (data) {
       token = data.token;
-  }).catch(function (err) {
-      console.log('something went wrong', err);
-  });
+  }).catch(function (err) {});
 }
