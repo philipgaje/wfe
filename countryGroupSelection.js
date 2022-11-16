@@ -1,6 +1,6 @@
 var token;
 
-var getCountryGroups(dropdown) {
+function getCountryGroups(dropdown) {
   return fetch('https://apps.dwe.hk/wfhk/api/leads/3/country_group', {
     headers: {
       'Authorization': 'bearer ' + token,
