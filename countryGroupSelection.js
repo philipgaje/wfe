@@ -1,22 +1,5 @@
 var token = null;
 
-function getCountryGroups(dropdown) {
-  return fetch('https://apps.dwe.hk/wfhk/api/leads/3/country_group', {
-    headers: {
-      'Authorization': 'bearer ' + token,
-    }
-  }).then(function (res) {
-    return res.json();
-  }).then(function (data) {
-    console.log(data);
-    data.forEach(function (entry) {
-      dropdown.append($('<option></option>').attr('value', entry.country_group_id).text(entry.name));
-    })
-  }).catch(function (err) {
-    console.log('something went wrong', err);
-  });
-}
-
 function setCountryGroupOptions() {
   let dropdown = $("#區域");
   
@@ -32,9 +15,48 @@ function setCountryGroupOptions() {
   else getCountryGroups(dropdown);
 }
 
+function getCountryGroups(dropdown) {
+  return fetch('https://apps.dwe.hk/wfhk/api/leads/3/country_group', {
+    headers: {
+      'Authorization': 'bearer ' + token,
+    }
+  }).then(function (res) {
+    return res.json();
+  }).then(function (data) {
+    data.forEach(function (entry) {
+      dropdown.append($('<option></option>').attr('value', entry.country_group_id).text(entry.name));
+    })
+  }).catch(function (err) {
+    console.log('something went wrong', err);
+  });
+}
+
 function handleCountryGroupSelect() {
   let country_group_id = this.value;
   alert(country_group_id);
+  
+  if(token == null) {
+    getAccessToken().then(function () {
+      getCountries(country_group_id, null);
+    });
+  }
+  else getCountries(country_group_id, null);
+}
+
+function getCountries(country_group_id, dropdown) {
+  return fetch('https://apps.dwe.hk/wfhk/api/leads/3/country', {
+    body: 'country_group_id=' + country_group_id,
+    headers: {
+      'Authorization': 'bearer ' + token,
+      'Content-Type': 'application/x-www-form-urlencoded'
+    }
+  }).then(function (res) {
+    return res.json();
+  }).then(function (data) {
+    console.log(data);
+  }).catch(function (err) {
+    console.log('something went wrong', err);
+  });
 }
 
 function getAccessToken() {
@@ -55,15 +77,3 @@ function getAccessToken() {
       console.log('something went wrong', err);
   });
 }
-  
-//   dropdown.append($('<option></option>').attr('value', 1).text("Group 1"));
-//   dropdown.append($('<option></option>').attr('value', 2).text("Group 2"));
-//   dropdown.append($('<option></option>').attr('value', 3).text("Group 3"));
-  
-//   const url = "https://apps.dwe.hk/wfhk/api/leads/3/country_group"
-  
-//   $.getJSON(url, function (data) {
-//     $.each(data, function (key, entry) {
-//       dropdown.append($('<option></option>').attr('value', entry.country_group_id).text(entry.name));
-//     })
-//   });
