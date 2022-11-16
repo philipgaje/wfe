@@ -8,7 +8,9 @@ function getCountryGroups(dropdown) {
   }).then(function (res) {
     return res.json();
   }).then(function (data) {
-    console.log('groups', data);
+    data.forEach(function (entry) {
+      dropdown.append($('<option></option>').attr('value', entry.country_group_id).text(entry.name));
+    })
   }).catch(function (err) {
     console.log('something went wrong', err);
   });
@@ -18,9 +20,7 @@ function setCountryGroupOptions() {
   let dropdown = $("#區域");
   
   dropdown.empty();
-  
   dropdown.append('<option selected="true" disabled>Choose Country Group</option>');
-  
   dropdown.attr('selectedIndex', 0);
   
   if(token == null) {
@@ -29,8 +29,7 @@ function setCountryGroupOptions() {
     });
   }
   
-  console.log("Cached: " + token);
-//   getCountryGroups(dropdown);
+  getCountryGroups(dropdown);
 }
 
 function handleCountryGroupSelect() {
