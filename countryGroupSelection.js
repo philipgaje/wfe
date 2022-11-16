@@ -28,7 +28,8 @@ function setCountryGroupOptions() {
       getCountryGroups(dropdown);
     });
   }
-  // fetch country groups
+  
+  getCountryGroups(dropdown);
 }
 
 function handleCountryGroupSelect() {
