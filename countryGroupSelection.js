@@ -6,6 +6,13 @@ function setCountryGroupOptions() {
   dropdown.append('<option selected="true" disabled>Choose Country Group</option>');
   
   dropdown.attr('selectedIndex', 0);
+  
+  
+}
+
+function handleCountryGroupSelect() {
+  let country_group_id = this.value();
+  alert(country_group_id);
 }
 
 async function getAccessToken() {
