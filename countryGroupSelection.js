@@ -8,9 +8,10 @@ function getCountryGroups(dropdown) {
   }).then(function (res) {
     return res.json();
   }).then(function (data) {
-    data.forEach(function (entry) {
-      dropdown.append($('<option></option>').attr('value', entry.country_group_id).text(entry.name));
-    })
+//     data.forEach(function (entry) {
+//       dropdown.append($('<option></option>').attr('value', entry.country_group_id).text(entry.name));
+//     })
+    console.log(data);
   }).catch(function (err) {
     console.log('something went wrong', err);
   });
@@ -28,8 +29,7 @@ function setCountryGroupOptions() {
       getCountryGroups(dropdown);
     });
   }
-  
-  getCountryGroups(dropdown);
+  else getCountryGroups(dropdown);
 }
 
 function handleCountryGroupSelect() {
