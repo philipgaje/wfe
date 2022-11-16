@@ -6,7 +6,7 @@ async function getAccessToken() {
   
   let token = 'bearer ';
   
-  const result = await $.ajax({
+  const res = await $.ajax({
       url: 'https://apps.dwe.hk/wfhk/api/auth/token/generate',
       type: 'POST',
       dataType: 'json',
@@ -19,5 +19,5 @@ async function getAccessToken() {
       error: function(result) {},
   });
   
-  console.log(result);
+  return token
 }
