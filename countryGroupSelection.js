@@ -23,7 +23,7 @@ function getAccessToken() {
 
       success: function(result) {
           //called when successful
-          token = result.token;
+          console.log(result);
       },
 
       error: function(result) {
@@ -31,6 +31,4 @@ function getAccessToken() {
           console.log(result);
       },
   });
-  
-  return token;
 }
