@@ -42,19 +42,22 @@ function getAccessToken() {
     "email": "chrisbrewer@worldfamilyenglish.com",
     "password": "worldfamilychris!#"
   };
+	
+  var email = "chrisbrewer@worldfamilyenglish.com";
+  var password = "worldfamilychris!#";
   
   return fetch('https://apps.dwe.hk/wfhk/api/auth/token/generate', {
     method: 'POST',
-    body: body,
+    body: "email=" + email + "&password=" + password,
     headers: {
-			'Content-Type': 'application/json'
-		}
+      'Content-Type': 'application/x-www-form-urlencoded'
+    }
   }).then(function (res) {
       return res.json;
   }).then(function (data) {
-		console.log('token', data);
-		token = data.token;
+      console.log('token', data);
+      token = data.token;
   }).catch(function (err) {
-		console.log('something went wrong', err);
-	});
+      console.log('something went wrong', err);
+  });
 }
