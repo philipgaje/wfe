@@ -32,6 +32,8 @@ function getCountryGroups(dropdown) {
 }
 
 function handleCountryGroupSelect() {
+  // set dropdown field for countries here
+  
   let country_group_id = this.value;
   alert(country_group_id);
   
@@ -52,6 +54,8 @@ function getCountries(country_group_id, dropdown) {
     return res.json();
   }).then(function (data) {
     console.log(data);
+    
+    // iterate through each country and append to dropdown field
   }).catch(function (err) {
     console.log('something went wrong', err);
   });
