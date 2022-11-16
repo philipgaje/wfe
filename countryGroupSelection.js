@@ -29,6 +29,7 @@ function setCountryGroupOptions() {
     });
   }
   
+  console.log("Cached: " token);
 //   getCountryGroups(dropdown);
 }
 
@@ -50,7 +51,6 @@ function getAccessToken() {
   }).then(function (res) {
       return res.json();
   }).then(function (data) {
-      console.log('token', data);
       token = data.token;
   }).catch(function (err) {
       console.log('something went wrong', err);
