@@ -32,7 +32,7 @@ function getCountryGroups(dropdown) {
 
 function clearPreviousCountrySelections() {
   for(let countryfield=1; countryfield<=COUNTRY_GROUPS; countryfield++) {
-    $("#" + countryfield).empty();
+    $("#" + countryfield).html(null);
   }
 }
 
