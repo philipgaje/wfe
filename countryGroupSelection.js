@@ -1,4 +1,5 @@
 var token = null;
+const COUNTRY_GROUPS = 6;
 
 function setCountryGroupOptions() {
   let dropdown = $("#區域");
@@ -29,11 +30,17 @@ function getCountryGroups(dropdown) {
   }).catch(function (err) {});
 }
 
+function clearPreviousCountrySelections() {
+  for(let countryfield=1; countryfield<=COUNTRY_GROUPS; countryfield++) {
+    $("#" + countryfield).empty();
+  }
+}
+
 function handleCountryGroupSelect() {
+  clearPreviousCountrySelections();
+  
   let country_group_id = this.value;
   let dropdown = $("#" + country_group_id);
-  
-  console.log("here");
   
   dropdown.empty();
   dropdown.append('<option selected="true" disabled>請選擇地區</option>');
