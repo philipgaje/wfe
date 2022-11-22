@@ -42,7 +42,6 @@ function handleCountryGroupSelect() {
   let country_group_id = this.value;
   let dropdown = $("#" + country_group_id);
   
-  dropdown.empty();
   dropdown.append('<option selected="true" disabled>請選擇地區</option>');
   dropdown.attr('selectedIndex', 0);
   
