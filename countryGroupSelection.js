@@ -34,10 +34,6 @@ function clearPreviousCountrySelections() {
   for(let countryfield=1; countryfield<=COUNTRY_GROUPS; countryfield++) {
     $("#" + countryfield).html(null);
   }
-  
-  for(let countryfield=1; countryfield<=COUNTRY_GROUPS; countryfield++) {
-    console.log($("#" + countryfield).find(":selected").val());
-  }
 }
 
 function handleCountryGroupSelect() {
