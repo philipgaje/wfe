@@ -35,6 +35,11 @@ function checkDate(endDate) {
     console.log("End Date is NULL");
     window.location.replace("https://www.worldfamily.com.hk/free-trial/");
   }
+  
+  else {
+    const parts = endDate.match(/.{3}/g);
+    console.log(parts);
+  }
 }
 
 function getAccessToken() {
