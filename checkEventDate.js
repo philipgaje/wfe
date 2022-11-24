@@ -13,8 +13,6 @@
   else getEventDate(trackingCode);
 })();
 
-let token = null;
-
 function getEventDate(trackingCode) {
   return fetch('https://apps.dwe.hk/wfhk/api/leads/3/info/' + trackingCode, {
     headers: {
