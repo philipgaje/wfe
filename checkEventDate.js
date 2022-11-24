@@ -37,7 +37,7 @@ function checkDate(endDate) {
   }
   
   else {
-    const parts = endDate.match(/.{3}/g);
+    const parts = endDate.match(/.{2}/g);
     console.log(parts);
   }
 }
