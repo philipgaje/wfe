@@ -24,15 +24,15 @@ function getEventDate(trackingCode) {
     return res.json();
   }).then(function (data) {
     console.log(data);
-    checkDate(data['event_date']);
+    checkDate(data['end_date']);
   }).catch(function (err) {
     console.log(err);
   });
 }
 
-function checkDate(eventDate) {
-  if(eventDate === null) {
-    console.log("Event Date is NULL");
+function checkDate(endDate) {
+  if(endDate === null) {
+    console.log("End Date is NULL");
     window.location.replace("https://www.worldfamily.com.hk/free-trial/");
   }
 }
