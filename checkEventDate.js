@@ -31,6 +31,7 @@ function getEventDate(trackingCode) {
 
 function checkDate(eventDate) {
   if(eventDate === null) {
+    console.log("Event Date is NULL");
     window.location.replace("https://www.worldfamily.com.hk/free-trial/");
   }
 }
