@@ -5,7 +5,7 @@ let authToken = null;
 //   const urlParams = new URLSearchParams(queryString);
 //   const trackingCode = urlParams.get("tracking_code");
   
-  const trackingCode = 'nv1806';
+  const trackingCode = 'nv180';
   
   if(authToken == null) {
     getAccessToken().then(function () {
