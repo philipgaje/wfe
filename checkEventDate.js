@@ -5,7 +5,12 @@
   
   const trackingCode = 'nv1806';
   
-  getEventDate(trackingCode);
+  if(token == null) {
+    getAccessToken().then(function () {
+      getEventDate(trackingCode);
+    });
+  }
+  else getEventDate(trackingCode);
 })();
 
 let token = null;
