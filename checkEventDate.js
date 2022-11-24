@@ -1,11 +1,11 @@
 let authToken = null;
 
 (function() {
-//   const queryString = window.location.search;
-//   const urlParams = new URLSearchParams(queryString);
-//   const trackingCode = urlParams.get("tracking_code");
+  const queryString = window.location.search;
+  const urlParams = new URLSearchParams(queryString);
+  const trackingCode = urlParams.get("tracking_code");
   
-  const trackingCode = 'nv1806';
+//   const trackingCode = 'nv1806';
   
   if(authToken == null) {
     getAccessToken().then(function () {
@@ -32,7 +32,6 @@ function getEventDate(trackingCode) {
 
 function checkDate(date) {
   if(date === null) {
-    console.log("Date is NULL");
     window.location.replace("https://www.worldfamily.com.hk/free-trial/");
   }
   
@@ -47,6 +46,7 @@ function checkDate(date) {
     
     if(currentDate.setHours(0,0,0,0) >= endDate) {
       alert("<<是次講座名額已滿，多謝各位支持﹗>>");
+      window.location.replace("https://www.worldfamily.com.hk/free-trial/");
     }
   }
 }
