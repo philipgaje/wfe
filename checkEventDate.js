@@ -1,10 +1,9 @@
 let authToken = null;
+const queryString = window.location.search;
+const urlParams = new URLSearchParams(queryString);
+const trackingCode = urlParams.get("tracking_code");
 
 (function() {
-  const queryString = window.location.search;
-  const urlParams = new URLSearchParams(queryString);
-  const trackingCode = urlParams.get("tracking_code");
-  
   if(authToken == null) {
     getAccessToken().then(function () {
       getEventDate(trackingCode);
@@ -22,7 +21,7 @@ function getEventDate(trackingCode) {
     return res.json();
   }).then(function (data) {
     console.log(data);
-    if(data['status'] && data['end_date']!== null)
+    if(data['status'] && data['end_date'] !== null)
       checkDate(data['end_date']);
     else
       window.location.replace("https://www.worldfamily.com.hk/free-trial/");
