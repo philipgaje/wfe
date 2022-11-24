@@ -30,15 +30,16 @@ function getEventDate(trackingCode) {
   });
 }
 
-function checkDate(endDate) {
-  if(endDate === null) {
-    console.log("End Date is NULL");
+function checkDate(date) {
+  if(date === null) {
+    console.log("Date is NULL");
     window.location.replace("https://www.worldfamily.com.hk/free-trial/");
   }
   
   else {
-    const parts = endDate.match(/.{2}/g);
-    console.log(parts);
+    const parts = date.match(/.{2}/g);
+    const endDate = new Date(parts[0], parts[1], parts[2]);
+    console.log(endDate);
   }
 }
 
