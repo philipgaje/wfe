@@ -1,3 +1,5 @@
+let authToken = null;
+
 (function() {
 //   const queryString = window.location.search;
 //   const urlParams = new URLSearchParams(queryString);
@@ -5,7 +7,7 @@
   
   const trackingCode = 'nv1806';
   
-  if(token == null) {
+  if(authToken == null) {
     getAccessToken().then(function () {
       getEventDate(trackingCode);
     });
@@ -16,7 +18,7 @@
 function getEventDate(trackingCode) {
   return fetch('https://apps.dwe.hk/wfhk/api/leads/3/info/' + trackingCode, {
     headers: {
-      'Authorization': 'bearer ' + token,
+      'Authorization': 'bearer ' + authToken,
     }
   }).then(function (res) {
     return res.json();
@@ -40,6 +42,6 @@ function getAccessToken() {
   }).then(function (res) {
       return res.json();
   }).then(function (data) {
-      token = data.token;
+      authToken = data.token;
   }).catch(function (err) {});
 }
