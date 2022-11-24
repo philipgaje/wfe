@@ -5,7 +5,7 @@ const trackingCode = urlParams.get("tracking_code");
 
 (function() {
   if(authToken == null) {
-    getAccessToken().then(function () {
+    getAuthToken().then(function () {
       getEventDate(trackingCode);
     });
   }
@@ -20,19 +20,14 @@ function getEventDate(trackingCode) {
   }).then(function (res) {
     return res.json();
   }).then(function (data) {
-    console.log(data);
     if(data['status'] && data['end_date'] !== null)
       checkDate(data['end_date']);
     else
       window.location.replace("https://www.worldfamily.com.hk/free-trial/");
-  }).catch(function (err) {
-    console.log(err);
-  });
+  }).catch(function (err) {});
 }
 
 function checkDate(date) {
-  date = '221124';
-  
   const parts = date.match(/.{2}/g);
   const endDate = new Date('20' + parts[0], parts[1] - 1, parts[2]);
   const currentDate = new Date();
@@ -43,7 +38,7 @@ function checkDate(date) {
   }
 }
 
-function getAccessToken() {
+function getAuthToken() {
   const email = "chrisbrewer@worldfamilyenglish.com";
   const password = "worldfamilychris!#";
   
