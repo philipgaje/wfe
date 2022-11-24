@@ -1,3 +1,6 @@
 (function() {
-  alert("Hello World!");
+  const queryString = window.location.search;
+  const urlParams = new URLSearchParams(queryString);
+  
+  alert(urlParams.get("tracking_code"));
 })();
