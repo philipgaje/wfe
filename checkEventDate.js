@@ -31,6 +31,8 @@ function getEventDate(trackingCode) {
 }
 
 function checkDate(date) {
+  date = '221124';
+  
   const parts = date.match(/.{2}/g);
   const endDate = new Date('20' + parts[0], parts[1] - 1, parts[2]);
   const currentDate = new Date();
