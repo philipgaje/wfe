@@ -38,8 +38,12 @@ function checkDate(date) {
   
   else {
     const parts = date.match(/.{2}/g);
-    const endDate = new Date('20' + parts[0], parts[1] - 1, parts[2]);
-    console.log(endDate);
+    const endDate = (new Date('20' + parts[0], parts[1] - 1, parts[2])).setHours(0,0,0,0);
+    const currentDate = new Date();
+    
+    if(currentDate >= endDate) {
+      alert("<<是次講座名額已滿，多謝各位支持﹗>>");
+    }
   }
 }
 
