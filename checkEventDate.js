@@ -23,6 +23,7 @@ function getEventDate(trackingCode) {
   }).then(function (res) {
     return res.json();
   }).then(function (data) {
+    console.log(data);
     checkDate(data['event_date']);
   }).catch(function (err) {
     console.log(err);
